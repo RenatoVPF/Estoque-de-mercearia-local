@@ -1,10 +1,25 @@
 <header>
     <h1>Seu enventario</h1>
 </header>
-<form >
-    <div>nome do produto</div>
-    <div>data de validade</div>
-    <div>valor do produto</div>
-    <div>quantidade do produto</div>
-    <div>codigo de barra</div>
+<form [formGroup]="cadastro" >
+    <div>
+        nome do produto:
+        <input type="text" formControlName="nomeDoProduto" class="form-contol">
+    </div>
+    <div>
+        data de validade:
+        <input type="text" formControlName="dataDeValidade" class="form-contol">
+    </div>
+    <div>
+        valor do produto:
+        <input type="number" formcontrolName="valorDoProduto" class="form-contol">
+    </div>
+    <div>
+        quantidade do produto:
+        <input type="number" formcontrolName="quantidadeDePodutos" class="form-contol">
+    </div>
+    <div>
+        codigo de barra:
+        <input type="text" formControlName="codigoDeBarraDoProduto" class="form-contol">
+    </div>
 </form>

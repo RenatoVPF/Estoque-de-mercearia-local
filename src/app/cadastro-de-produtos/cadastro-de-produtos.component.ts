@@ -10,7 +10,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 export class CadastroDeProdutosComponent {
 
   cadastro = new FormGroup({
-    nomedoProduto : new FormControl(''),
+    nomeDoProduto : new FormControl(''),
     dataDeValidade : new FormControl(''),
     valorDoProduto : new FormControl(null),
     quantidadeDeProdutos : new FormControl(null),
