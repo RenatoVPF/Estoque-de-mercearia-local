@@ -3,23 +3,54 @@
 </header>
 <form [formGroup]="cadastro" >
     <div>
-        nome do produto:
-        <input type="text" formControlName="nomeDoProduto" class="form-contol">
+        nome do produto: <br>
+        <input type="text" formControlName="nomeDoProduto" class="form-contol" placeholder="Nome Do Produto">
     </div>
     <div>
-        data de validade:
-        <input type="text" formControlName="dataDeValidade" class="form-contol">
+       data de validade: <br>
+        <input type="date" id="dataim" formControlName="dataDeValidade" class="form-contol" >
     </div>
     <div>
-        valor do produto:
+        valor do produto: <br>
         <input type="number" formcontrolName="valorDoProduto" class="form-contol">
     </div>
     <div>
-        quantidade do produto:
+        quantidade do produto: <br>
         <input type="number" formcontrolName="quantidadeDePodutos" class="form-contol">
     </div>
     <div>
-        codigo de barra:
+        codigo de barra: <br>
         <input type="text" formControlName="codigoDeBarraDoProduto" class="form-contol">
     </div>
+    <div >
+           <input type="button" value="cadastra" class="btn btn-outline-primary" >
+    </div>
+    <div id="divdebts" class="container text-center">
+        <div id="divdebtss" class="row row-cols-center-3">
+            
+            <div class="col">
+                <input type="button" value="alterar" class="btn btn-outline-primary" >
+            </div>
+            <div class="col">
+                <input type="button" value="excluir" class="btn btn-outline-primary" >
+            </div>
+            <div class="col">
+                <input type="button" value="cancelar" class="btn btn-outline-primary" >
+            </div>
+        </div>
+    </div>
 </form>
+<table class="table table-striped-columns">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>nome do produto</th>
+            <th>data de validade</th>
+            <th>valor</th>
+            <th>quantidade</th>
+            <th>codigo de barra</th>
+            <th>selecinar</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
