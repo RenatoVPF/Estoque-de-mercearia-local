@@ -3,42 +3,50 @@
 </header>
 <form [formGroup]="cadastro" >
     <div>
+        @if (cadastro.get('nomeDoProduto').hasError('required') && cadastro.get('nomeDoProduto').touched) {
+            
+            <p class="alert alert-warning">precisa informar o neme do produto </p>
+        }
         nome do produto: <br>
         <input type="text" formControlName="nomeDoProduto" class="form-contol" placeholder="Nome Do Produto">
     </div>
     <div>
+        @if (cadastro.get('dataDeValidade').hasError('required') && cadastro.get('dataDeValidade').touched) {
+            <p class="alert alert-warning">precisa informar a data de validade </p>
+        }
        data de validade: <br>
         <input type="date" id="dataim" formControlName="dataDeValidade" class="form-contol" >
     </div>
     <div>
+        @if (cadastro.get('valorDoProduto').hasError('required') && cadastro.get('valorDoProduto').touched) {
+            <p class="alert alert-warning">precisa informa o valor do seu produto</p>
+        }
         valor do produto: <br>
-        <input type="number" formcontrolName="valorDoProduto" class="form-contol">
+        <input type="number"formControlName="valorDoProduto" name="" id="" class="form-contol">
     </div>
     <div>
+        @if (cadastro.get('quantidadeDeProdutos').hasError('required') && cadastro.get('quantidadeDeProdutos').touched) {
+            <p class="alert alert-warning">precisa informa a quantidade desse produto</p>
+        }
         quantidade do produto: <br>
-        <input type="number" formcontrolName="quantidadeDePodutos" class="form-contol">
+        <input type="number" formControlName="quantidadeDeProdutos" name="" id="" class="form-contol">
     </div>
     <div>
+        @if (cadastro.get('codigoDeBarraDoProduto').hasError('required') && cadastro.get('codigoDeBarraDoProduto').touched) {
+            <p class="alert alert-warning">precisa informar o codigo de barra desse produto</p>
+        }
         codigo de barra: <br>
         <input type="text" formControlName="codigoDeBarraDoProduto" class="form-contol">
     </div>
     <div >
-           <input type="button" value="cadastra" class="btn btn-outline-primary" >
+         <input type="button" value="cadastra" class="btn btn-outline-primary" (click)="cadastra()"  >
+        <input type="button" value="alterar" class="btn btn-outline-primary" disabled>
+        <input type="button" value="excluir" class="btn btn-outline-primary" disabled>
+        <input type="button" value="cancelar" class="btn btn-outline-primary" disabled>
+    
     </div>
-    <div id="divdebts" class="container text-center">
-        <div id="divdebtss" class="row row-cols-center-3">
-            
-            <div class="col">
-                <input type="button" value="alterar" class="btn btn-outline-primary" >
-            </div>
-            <div class="col">
-                <input type="button" value="excluir" class="btn btn-outline-primary" >
-            </div>
-            <div class="col">
-                <input type="button" value="cancelar" class="btn btn-outline-primary" >
-            </div>
-        </div>
-    </div>
+    
+   
 </form>
 <table class="table table-striped-columns">
     <thead>

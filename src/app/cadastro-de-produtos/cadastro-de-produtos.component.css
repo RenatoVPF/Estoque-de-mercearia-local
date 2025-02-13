@@ -13,3 +13,6 @@ input{
     border-radius: 10px ;
     box-shadow: 3px 3px 5px;
 }
+input#dataim{
+    width: 230px;
+}

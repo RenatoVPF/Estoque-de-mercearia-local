@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Produto } from '../modelo/Produto';
 
 @Component({
   selector: 'app-cadastro-de-produtos',
@@ -10,12 +11,20 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 export class CadastroDeProdutosComponent {
 
   cadastro = new FormGroup({
-    nomeDoProduto : new FormControl(''),
-    dataDeValidade : new FormControl(''),
-    valorDoProduto : new FormControl(null),
-    quantidadeDeProdutos : new FormControl(null),
-    codigoDeBarraDoProduto : new FormControl('')
+    nomeDoProduto : new FormControl('', Validators.required),
+    dataDeValidade : new FormControl(null, Validators.required),
+    valorDoProduto : new FormControl(null, Validators.required),
+    quantidadeDeProdutos : new FormControl(null, Validators.required),
+    codigoDeBarraDoProduto : new FormControl('', Validators.required)
   })
+  vetor:Produto[] = []
+  cadastra(){
+    this.vetor.push(this.cadastro.value as Produto)
 
+    this.cadastro.reset();
+
+    console.table(this.vetor)
+  }
 
 }
+
