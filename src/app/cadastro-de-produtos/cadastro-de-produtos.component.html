@@ -1,59 +1,63 @@
-<header>
-    <h1>Seu enventario</h1>
-</header>
-<form [formGroup]="cadastro" >
-    <div>
-        @if (cadastro.get('nomeProduto').hasError('required') && cadastro.get('nomeProduto').touched) {
-            
-            <p class="alert alert-warning">precisa informar o neme do produto </p>
-        }
-        nome do produto: <br>
-        <input type="text" formControlName="nomeProduto" class="form-contol" placeholder="Nome Do Produto">
-    </div>
-    <div>
-        @if (cadastro.get('validadeProduto').hasError('required') && cadastro.get('validadeProduto').touched) {
-            <p class="alert alert-warning">precisa informar a data de validade </p>
-        }
-       data de validade: <br>
-        <input type="date" id="dataim" formControlName="validadeProduto" class="form-contol" >
-    </div>
-    <div>
-        @if (cadastro.get('valorProduto').hasError('required') && cadastro.get('valorProduto').touched) {
-            <p class="alert alert-warning">precisa informa o valor do seu produto</p>
-        }
-        valor do produto: <br>
-        <input type="number"formControlName="valorProduto" name="" id="" class="form-contol">
-    </div>
-    <div>
-        @if (cadastro.get('quantidadeProduto').hasError('required') && cadastro.get('quantidadeProduto').touched) {
-            <p class="alert alert-warning">precisa informa a quantidade desse produto</p>
-        }
-        quantidade do produto: <br>
-        <input type="number" formControlName="quantidadeProduto" name="" id="" class="form-contol">
-    </div>
-    <div>
-        @if (cadastro.get('codigoBarraProduto').hasError('required') && cadastro.get('codigoBarraProduto').touched) {
-            <p class="alert alert-warning">precisa informar o codigo de barra desse produto</p>
-        }
-        codigo de barra: <br>
-        <input type="text" formControlName="codigoBarraProduto" class="form-contol">
-    </div>
-    <div >
-        @if (visBtn) {       
-            <input type="button" value="cadastra" class="btn btn-outline-primary" (click)="cadastra()" [disabled]="cadastro.invalid" >
-        }
-        @else {
-
-            <input type="button" value="alterar" class="btn btn-outline-primary"  (click)="alterar()" [disabled]="cadastro.invalid">
-            <input type="button" value="excluir" class="btn btn-outline-primary" (click)="excluir()" [disabled]="cadastro.invalid">
-            <input type="button" value="cancelar" class="btn btn-outline-primary"(click)="cancelar()" >
-        }
-        
+<body>
     
-    </div>
+
+    <header>
+        <h1>Seu enventario</h1>
+    </header>
+    <form [formGroup]="cadastro" >
+         <div>
+            @if (cadastro.get('nomeProduto').hasError('required') && cadastro.get('nomeProduto').touched) {
+            
+              <p class="alert alert-warning">precisa informar o neme do produto </p>
+         }
+         nome do produto: <br>
+            <input type="text" formControlName="nomeProduto" class="form-contol" placeholder="Nome Do Produto">
+        </div>
+        <div>
+            @if (cadastro.get('validadeProduto').hasError('required') && cadastro.get('validadeProduto').touched) {
+                <p class="alert alert-warning">precisa informar a data de validade </p>
+         }
+        data de validade: <br>
+            <input type="date" id="dataim" formControlName="validadeProduto" class="form-contol" >
+        </div>
+        <div>
+            @if (cadastro.get('valorProduto').hasError('required') && cadastro.get('valorProduto').touched) {
+                <p class="alert alert-warning">precisa informa o valor do seu produto</p>
+            }
+            valor do produto: <br>
+            <input type="number"formControlName="valorProduto" name="" id="" class="form-contol" placeholder="valor do produto">
+        </div>
+        <div>
+            @if (cadastro.get('quantidadeProduto').hasError('required') && cadastro.get('quantidadeProduto').touched) {
+                <p class="alert alert-warning">precisa informa a quantidade desse produto</p>
+            }
+            quantidade do produto: <br>
+            <input type="number" formControlName="quantidadeProduto" name="" id="" class="form-contol" placeholder="quantidade do produto">
+        </div>
+        <div>
+            @if (cadastro.get('codigoBarraProduto').hasError('required') && cadastro.get('codigoBarraProduto').touched) {
+                <p class="alert alert-warning">precisa informar o codigo de barra desse produto</p>
+            }
+            codigo de barra: <br>
+            <input type="text" formControlName="codigoBarraProduto" class="form-contol" placeholder="codigo de barra">
+        </div>
+        <div >
+            @if (visBtn) {       
+                <input type="button" value="cadastra" class="btn btn-outline-primary" (click)="cadastra()" [disabled]="cadastro.invalid" >
+            }
+            @else {
+
+                <input type="button" value="alterar" class="btn btn-outline-primary"  (click)="alterar()" [disabled]="cadastro.invalid">
+                <input type="button" value="excluir" class="btn btn-outline-primary" (click)="excluir()" [disabled]="cadastro.invalid">
+                <input type="button" value="cancelar" class="btn btn-outline-primary"(click)="cancelar()" >
+            }
+            
+        
+        </div>
     
    
-</form>
+    </form> 
+</body>
 <table class="table table-striped-columns">
     <thead>
         <tr>
